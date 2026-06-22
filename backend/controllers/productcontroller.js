@@ -30,7 +30,13 @@ const get_products = async (req ,res ) =>{
     const hasmore = products.length > limit ;
     const pageItems = hasmore ? products.slice(0, limits ):products;
 
-    
+    let nextCursor = null ;
+    if ( hasmore ){
+        const lastitem = pageItems[pageItems.length-1 ];
+        nextCursor = encodeCursor(lastitem.created_id , lastitem._id);
+    }
+
+
 
 
 

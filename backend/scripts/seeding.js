@@ -1,6 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const Product = require('../models/Product');
+const Product = require('../models/productsSchema');
 
 const TOTAL_PRODUCTS = 200000;
 const BATCH_SIZE = 1000;

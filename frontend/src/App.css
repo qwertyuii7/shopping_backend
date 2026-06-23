@@ -1,0 +1,110 @@
+/* App.css - Minimal Black and White Theme */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-input {
+  padding: 8px 12px;
+  border: 1px solid #000000;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #000000;
+  outline: none;
+}
+
+.category-input:focus {
+  border-width: 2px;
+}
+
+.error-message {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #000000;
+  font-weight: bold;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.products-table th,
+.products-table td {
+  border: 1px solid #000000;
+  padding: 12px;
+  text-align: left;
+}
+
+.products-table th {
+  font-weight: bold;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.empty-state,
+.loading-state {
+  font-size: 16px;
+  font-style: italic;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.load-more-btn {
+  padding: 12px 24px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.load-more-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.load-more-btn:active {
+  transform: translateY(1px);
+}

@@ -29,18 +29,18 @@ const get_products = async (req, res) => {
         const products = await Product_model.find(query).sort({ created_at: -1, _id: -1 }).limit(limit + 1);
 
         const hasmore = products.length > limit;
-        const pageItems = hasmore ? products.slice(0, limits) : products;
+        const pageItems = hasmore ? products.slice(0, limit) : products;
 
         let nextCursor = null;
         if (hasmore) {
             const lastitem = pageItems[pageItems.length - 1];
-            nextCursor = encodeCursor(lastitem.created_id, lastitem._id);
+            nextCursor = encodeCursor(lastitem.created_at, lastitem._id);
         }
 
 
         res.json({
             data: pageItems,
-            cursor: nextCursor
+            next_cursor: nextCursor
         });
 
     } catch (err) {
@@ -64,4 +64,4 @@ function decodeCursor(cursor) {
   return JSON.parse(payload);
 }
 
-module.exports = { getProducts };
+module.exports = get_products;

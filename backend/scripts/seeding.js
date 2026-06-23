@@ -1,6 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const Product = require('../models/productsSchema');
+const { Product_model } = require("../models/ProductsSchema.js");
+
 
 const TOTAL_PRODUCTS = 200000;
 const BATCH_SIZE = 1000;
@@ -28,7 +29,7 @@ async function seed() {
     console.log('Connected to MongoDB. Seeding...');
 
     
-    await Product.deleteMany({});
+    await Product_model.deleteMany({});
     console.log('Cleared existing products.');
 
     let inserted = 0;
@@ -41,7 +42,7 @@ async function seed() {
         batch.push(generateProduct());
       }
 
-      await Product.insertMany(batch);
+      await Product_model.insertMany(batch);
       inserted += currentBatchSize;
       console.log(`Inserted ${inserted} / ${TOTAL_PRODUCTS}`);
     }

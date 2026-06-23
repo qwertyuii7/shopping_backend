@@ -84,6 +84,7 @@ function App() {
             <option value="home">Home</option>
             <option value="beauty">Beauty</option>
             <option value="toys">Toys</option>
+            <option value="groceries">Groceries</option>
           </select>
         </div>
       </header>

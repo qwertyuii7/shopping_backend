@@ -31,14 +31,14 @@ function App() {
       }
 
       const data = await response.json();
-      
+
       // If we have a cursor, we append the new products. Otherwise, we replace the list.
       if (cursor) {
         setProducts((prev) => [...prev, ...data.data]);
       } else {
         setProducts(data.data);
       }
-      
+
       setNextCursor(data.next_cursor);
       setInitialLoaded(true);
     } catch (err) {

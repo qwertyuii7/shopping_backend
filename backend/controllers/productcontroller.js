@@ -4,14 +4,14 @@ const { Product_model } = require("../models/productsSchema");
 const get_products = async (req, res) => {
     try {
 
-        const limit = req.query.limit || 20;
+        const limit = parseInt(req.query.limit) || 20;
         const category = req.query.category;
         const cursor = req.query.cursor;
 
         const query = {};
 
         if (category) {
-            query.category = category;
+            query.category = { $regex: new RegExp('^' + category + '$', 'i') };
         }
 
         if (cursor) {

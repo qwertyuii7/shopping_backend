@@ -78,12 +78,12 @@ function App() {
             className="category-input"
           >
             <option value="">All Categories</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Books">Books</option>
-            <option value="Home & Kitchen">Home & Kitchen</option>
-            <option value="Toys">Toys</option>
-            <option value="Beauty">Beauty</option>
+            <option value="electronics">Electronics</option>
+            <option value="books">Books</option>
+            <option value="sports">Sports</option>
+            <option value="home">Home</option>
+            <option value="beauty">Beauty</option>
+            <option value="toys">Toys</option>
           </select>
         </div>
       </header>

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 
 
-require("dotenv").config()
+require("dotenv").config({ override: true })
 
 const connectiondb = async () =>{
 

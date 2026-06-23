@@ -11,7 +11,7 @@ const get_products = async (req, res) => {
         const query = {};
 
         if (category) {
-            query.category = { $regex: new RegExp('^' + category + '$', 'i') };
+            query.category = category.toLowerCase();
         }
 
         if (cursor) {

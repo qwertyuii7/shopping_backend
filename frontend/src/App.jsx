@@ -71,14 +71,20 @@ function App() {
         <h1>Product Catalog</h1>
         <div className="filter-container">
           <label htmlFor="category">Filter by Category:</label>
-          <input
+          <select
             id="category"
-            type="text"
             value={category}
             onChange={handleCategoryChange}
-            placeholder="Enter category..."
             className="category-input"
-          />
+          >
+            <option value="">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Books">Books</option>
+            <option value="Home & Kitchen">Home & Kitchen</option>
+            <option value="Toys">Toys</option>
+            <option value="Beauty">Beauty</option>
+          </select>
         </div>
       </header>
 
